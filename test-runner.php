@@ -3,13 +3,17 @@ define("DONT_RUN_SAMPLES", "true");
 define("SAMPLE_CODE_NAME_HEADING", "SampleCodeName");
 require 'vendor/autoload.php';
 
-if ( $_SERVER['argc'] != 3 ) { 
-  die('\n Usage: phpunit test-runner.php <SampleCodeDirectoryPath>');
+if ($_SERVER['argc'] == 3) { 
+  $dirPath = $_SERVER['argv'][2];
+  if(substr($dirPath, -1) != "/")
+    $dirPath = $dirPath."/";
 } 
-$dirPath = $_SERVER['argv'][2];
-echo $dirPath;
-if(substr($dirPath, -1) != "/")
-  $dirPath = $dirPath."/";
+else if ($_SERVER['argc'] == 2) { 
+  $dirPath = "./";
+}
+else{
+  echo "Invalid number of arguements to test-runner: " . $_SERVER['argc'].".\n Usage: vendor/phpunit/phpunit/phpunit test-runner.php";
+}
 
 $directories = array(
             'CustomerProfiles/',

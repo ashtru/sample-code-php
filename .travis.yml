@@ -11,5 +11,5 @@ before_script:
     - composer install --prefer-dist --ignore-platform-reqs
 
 script:
-    - phpunit test-runner.php .
+    - phpunit test-runner.php
 
