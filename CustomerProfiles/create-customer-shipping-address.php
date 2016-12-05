@@ -1,5 +1,6 @@
 <?php
   require 'vendor/autoload.php';
+  require_once 'Constants.php';
   use net\authorize\api\contract\v1 as AnetAPI;
   use net\authorize\api\controller as AnetController;
   
@@ -10,8 +11,8 @@
   {
 	  // Common setup for API credentials
 	  $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-	  $merchantAuthentication->setName(\SampleCode\Constants::MERCHANT_LOGIN_ID);
-      $merchantAuthentication->setTransactionKey(\SampleCode\Constants::MERCHANT_TRANSACTION_KEY);
+	  $merchantAuthentication->setName(Constants::MERCHANT_LOGIN_ID);
+      $merchantAuthentication->setTransactionKey(Constants::MERCHANT_TRANSACTION_KEY);
     
 	  // Use An existing customer profile id for this merchant name and transaction key
 

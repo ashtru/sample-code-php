@@ -1,5 +1,4 @@
 <?php
-namespace SampleCode;
 
 class Constants
 {

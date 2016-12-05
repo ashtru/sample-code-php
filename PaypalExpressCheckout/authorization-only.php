@@ -1,5 +1,6 @@
 <?php
 require 'vendor/autoload.php';
+  require_once 'Constants.php';
 
 use net\authorize\api\contract\v1 as AnetAPI;
 use net\authorize\api\controller as AnetController;
@@ -9,8 +10,8 @@ define("AUTHORIZENET_LOG_FILE", "phplog");
 function payPalAuthorizeOnly($amount) {
     // Common setup for API credentials (Paypal compatible merchant)
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-    $merchantAuthentication->setName(\SampleCode\Constants::MERCHANT_LOGIN_ID);
-    $merchantAuthentication->setTransactionKey(\SampleCode\Constants::MERCHANT_TRANSACTION_KEY);
+    $merchantAuthentication->setName(Constants::MERCHANT_LOGIN_ID);
+    $merchantAuthentication->setTransactionKey(Constants::MERCHANT_TRANSACTION_KEY);
     $refId = 'ref' . time();
 
     // Create the payment data for a paypal account
@@ -36,7 +37,7 @@ function payPalAuthorizeOnly($amount) {
 
     if ($response != null)
     {
-      if($response->getMessages()->getResultCode() == \SampleCode\Constants::RESPONSE_OK)
+      if($response->getMessages()->getResultCode() == Constants::RESPONSE_OK)
       {
         $tresponse = $response->getTransactionResponse();
         
