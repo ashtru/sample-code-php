@@ -4,8 +4,5 @@
   "ext-curl": "*",
   "phpunit/phpunit": "~4.0",
   "authorizenet/authorizenet": "1.9.2"
-  },
-  "autoload": {
-    "classmap": ["constants"]
   }
 }
