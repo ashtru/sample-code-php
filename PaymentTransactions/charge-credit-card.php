@@ -8,6 +8,8 @@
 
 function chargeCreditCard($amount)
 {
+    phpinfo();  
+  
     /* Create a merchantAuthenticationType object with authentication details
        retrieved from the constants file */
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
