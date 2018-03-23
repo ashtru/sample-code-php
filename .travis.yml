@@ -13,4 +13,4 @@ before_script:
 script:
     - php PaymentTransactions/charge-credit-card.php
 #    - phpunit test-runner.php .
-
+    - cat phplog
