@@ -1,11 +1,11 @@
 <?php
 	require 'vendor/autoload.php';
-  require_once 'Constants.php';
+  	require_once 'Constants.php';
 	
 	use net\authorize\api\contract\v1 as AnetAPI;
 	use net\authorize\api\controller as AnetController;
 
-    define("AUTHORIZENET_LOG_FILE", "phplog");
+    	define("AUTHORIZENET_LOG_FILE", "phplog");
 
 	function getSubscription($subscriptionId) {
 
@@ -55,8 +55,9 @@
 			// Failed to get response
 			echo "Null Response Error";
 		}
-
+		echo $response->getSubscription()->getStartDate();
 		return $response;
+		
 	}
 
 	if(!defined('DONT_RUN_SAMPLES'))
