@@ -36,6 +36,7 @@
 				echo "SUCCESS: GetSubscription:" . "\n";
 				// Displaying the details
 				echo "Subscription Name: " . $response->getSubscription()->getName(). "\n";
+				echo "START DATE: " . $response->getPaymentSchedule()->getPaymentSchedule()->getStartDate(). "\n";
 				echo "Subscription amount: " . $response->getSubscription()->getAmount(). "\n";
 				echo "Subscription status: " . $response->getSubscription()->getStatus(). "\n";
 				echo "Subscription Description: " . $response->getSubscription()->getProfile()->getDescription(). "\n";
